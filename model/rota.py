@@ -2,10 +2,9 @@ class Rota():
     
     
     def __init__(self, nomeDestino, qtdalunos, prefeitura, veiculo, passageiro, horaSaida, horaChegada):
-        super().__init__(prefeitura)
         self.nomeDestino = nomeDestino
-        self.prefeitura = prefeitura
         self.qtdalunos = qtdalunos
+        self.prefeitura = prefeitura        
         self.veiculo = veiculo
         self.passageiro = passageiro
         self.horaSaida = horaSaida
