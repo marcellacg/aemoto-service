@@ -31,7 +31,10 @@ gestor = GestorApp("Severino", "12/02/1999", "seve@sevs", "8752-5541")
 print(gestor)
 instituicao = InstituicaoDeEnsino("IFPB", "Rua Professor Carlos Leonardo Arcoverde", "98195-6465")
 motorista = Motorista("----", "Guarabira", "Motorista de ônibus")
-passageiro = Passageiro("Pedro", "Tacima", "Guarabira", "UEPB", "Geografia", "2012140060")
+passageiro = Passageiro(aluno, "Tacima", "Guarabira")
+print(passageiro)
+
+
 prefeito = Prefeito("Dantas", "20/09/1960", "dantas@mail", "25899-8514")
 
 rota = Rota("Guarabira", "30", "Riachão", "Van", "Inácia", "08:00h", "09:00h")
