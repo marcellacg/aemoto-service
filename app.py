@@ -1,4 +1,4 @@
-from model.aluno import Aluno, Nome
+from model.aluno import Aluno
 from model.cidade import Cidade
 from model.endereco import Endereco
 from model.funcionario import Funcionario
@@ -16,8 +16,9 @@ from model.veiculo import Veiculo
 
 
 pessoa = Pessoa("Joao", "25/10/2000", "email@joao", "58725-5852")
-aluno = Aluno("Maria", "IFPB", "TSI", "25233521")
 
+aluno = Aluno("Maria", "25/01/2009", "maria@email", "8525-4521", "IFPB", "TSI", "25233521")
+print(aluno)
 cidade = Cidade("Guarabira", "GBA")
 endereco = Endereco("58200-000", "43", "Casa", "Próximo a DyliJoias", "Rua dos Anjos")
 

@@ -1,19 +1,12 @@
 from model.pessoa import Pessoa
 
-class Nome(Pessoa):
-    def __init__(self, nome):
-        self.nome = nome
+class Aluno(Pessoa):
 
-    def __repr__(self):
-        return self.nome
-
-class Aluno(Nome):
-
-    def __init__(self, nome, instituicaoDeEnsino, curso, matricula):
-        super().__init__(nome)
+    def __init__(self, nome, nascimento, email, telefone, instituicaoDeEnsino, curso, matricula):
+        super().__init__(nome, nascimento, email, telefone)
         self.instituicaoDeEnsino = instituicaoDeEnsino
         self.curso = curso
         self.matricula = matricula
     
     def __repr__(self):
-        return '<Nome: {}\n Instituição de ensino: {}\n Curso: {}\n Matrícula: {}>'.format(self.nome, self.instituicaoDeEnsino, self.curso, self.matricula)
+        return '<Nome: {}\n Nascimento: {}\n Email: {}\n Telefone: {}\n Instituição de ensino: {}\n Curso: {}\n Matrícula: {}>'.format(self.nome, self.nascimento, self.email, self.telefone, self.instituicaoDeEnsino, self.curso, self.matricula)
