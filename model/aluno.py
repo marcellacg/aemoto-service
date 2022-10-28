@@ -11,7 +11,7 @@ class Aluno(Pessoa, db.Model):
     matricula = db.Column(db.String(20), nullable=False)
 
     parent_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
-    parent = db.relationship("Parent", back_populates="children")
+    parent = db.relationship("Pessoa")
 
     def __init__(self, nome, nascimento, email, telefone, instituicaoDeEnsino, curso, matricula):
         super().__init__(nome, nascimento, email, telefone)
