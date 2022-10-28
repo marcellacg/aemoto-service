@@ -1,7 +1,5 @@
-from model.pessoa import Pessoa
 
-
-class Funcionario(Pessoa):
+class Funcionario():
     
     def __init__(self, prefeitura, cargo):
         self.prefeitura = prefeitura

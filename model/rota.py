@@ -11,4 +11,4 @@ class Rota():
         self.horaChegada = horaChegada
 
     def __repr__(self):
-        return '<Nome destino {}  Quantidade de Alunos {} Prefeitura {} Veiculo {} Passageiro {} Hora de Saída {} Hora de chegada {}>'.format(self.nomeDestino, self.qtdalunos, self.prefeitura, self.veiculo, self.passageiro, self.horaSaida, self.horaChegada)
+        return '<Nome destino: {}\n  Quantidade de Alunos: {}\n Prefeitura: {}\n Veiculo: {}\n Passageiro: {}\n Hora de Saída: {}\n Hora de chegada: {}\n>'.format(self.nomeDestino, self.qtdalunos, self.prefeitura, self.veiculo, self.passageiro, self.horaSaida, self.horaChegada)

@@ -1,7 +1,7 @@
 from model.aluno import Aluno
 
 
-class Passageiro():
+class Passageiro(Aluno):
     
     def __init__(self, aluno, cidadeOrigem, cidadeDestino):
         self.aluno = aluno
@@ -9,4 +9,4 @@ class Passageiro():
         self.cidadeDestino = cidadeDestino
 
     def __repr__(self):
-        return '<Aluno {} Cidade Origem {} Cidade Destino {} >'.format(self.aluno, self.cidadeOrigem, self.cidadeDestino)
+        return '<Aluno: {}\n Cidade Origem: {}\n Cidade Destino {} >'.format(self.aluno, self.cidadeOrigem, self.cidadeDestino)
