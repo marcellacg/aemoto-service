@@ -1,6 +1,17 @@
 from model.pessoa import Pessoa
+from helpers.database import db
 
-class Aluno(Pessoa):
+class Aluno(Pessoa, db.Model):
+
+    __tablename__ = "tb_aluno"
+
+    id = db.Column(db.Integer, primary_key=True)
+    instituicaoDeEnsino = db.Column(db.String(80), nullable=False)
+    curso = db.Column(db.String(50), nullable=False)
+    matricula = db.Column(db.String(20), nullable=False)
+
+    parent_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
+    parent = db.relationship("Parent", back_populates="children")
 
     def __init__(self, nome, nascimento, email, telefone, instituicaoDeEnsino, curso, matricula):
         super().__init__(nome, nascimento, email, telefone)
