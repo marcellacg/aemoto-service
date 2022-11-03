@@ -10,7 +10,10 @@ class Pessoa(db.Model):
     email = db.Column(db.String(150), nullable=False)
     telefone = db.Column(db.String(11), nullable=False)
 
-    child = db.relationship("Aluno", uselist=False)
+    aluno_child = db.relationship("Aluno", uselist=False)
+    prefeito_child = db.relationship("Prefeito", uselist=False)
+    endereco_child = db.relationship("Endereco", uselist=False)
+    funcionario_child = db.relationship("Funcionario", uselist=False)
 
     def __init__(self, nome, nascimento, email, telefone):
         self.nome = nome

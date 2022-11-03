@@ -10,6 +10,8 @@ class Endereco(db.Model):
     referencia = db.Column(db.String(300), nullable=False)
     logradouro = db.Column(db.String(100), nullable=False)
 
+    pessoa_parent = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
+
     def __init__(self, cep, numero, complemento, referencia, logradouro):
         self.cep = cep
         self.numero = numero

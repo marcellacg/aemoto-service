@@ -8,6 +8,8 @@ class Funcionario(db.Model):
     prefeitura = db.Column(db.String(90), nullable=False)
     cargo = db.Column(db.String(30), nullable=False)
     
+    pessoa_parent = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
+
     def __init__(self, prefeitura, cargo):
         self.prefeitura = prefeitura
         self.cargo = cargo

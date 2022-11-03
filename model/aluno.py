@@ -10,8 +10,8 @@ class Aluno(Pessoa, db.Model):
     curso = db.Column(db.String(50), nullable=False)
     matricula = db.Column(db.String(20), nullable=False)
 
-    parent_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
-    parent = db.relationship("Pessoa")
+    pessoa_parent = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
+    #parent = db.relationship("Pessoa")
 
     def __init__(self, nome, nascimento, email, telefone, instituicaoDeEnsino, curso, matricula):
         super().__init__(nome, nascimento, email, telefone)
