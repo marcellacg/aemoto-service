@@ -10,6 +10,12 @@ class Prefeitura(db.Model):
     telefone = db.Column(db.String(11), unique=True, nullable=False)
     nomePrefeito = db.Column(db.String(100), unique=True, nullable=False)
 
+    prefeito_child = db.relationship("Prefeito", uselist=False)
+    cidade_parent = db.Column(db.Integer, db.ForeignKey("tb_cidade.id"))
+    rota_parent = db.Column(db.Integer, db.ForeignKey("tb_rota.id"))
+    gestores = db.relationship('GestorApp', backref='GestorApp', lazy=True)
+    funcionarios = db.relationship('Funcionario', backref='Funcionario', lazy=True)
+
     def __init__(self, secretarios, email, telefone, nomePrefeito):
         self.secretarios = secretarios
         self.email = email

@@ -14,6 +14,7 @@ class Pessoa(db.Model):
     prefeito_child = db.relationship("Prefeito", uselist=False)
     endereco_child = db.relationship("Endereco", uselist=False)
     funcionario_child = db.relationship("Funcionario", uselist=False)
+    gestor_child = db.relationship("GestorApp", uselist=False)
 
     def __init__(self, nome, nascimento, email, telefone):
         self.nome = nome

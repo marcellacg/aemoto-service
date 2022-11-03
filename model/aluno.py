@@ -11,6 +11,8 @@ class Aluno(Pessoa, db.Model):
     matricula = db.Column(db.String(20), nullable=False)
 
     pessoa_parent = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
+    instituicaoDeEnsino_child = db.relationship("InstituicaoDeEnsino", uselist=False)
+    rotas = db.relationship('Alunos', backref='Alunos', lazy=True)
     #parent = db.relationship("Pessoa")
 
     def __init__(self, nome, nascimento, email, telefone, instituicaoDeEnsino, curso, matricula):

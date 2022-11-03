@@ -9,6 +9,8 @@ class Funcionario(db.Model):
     cargo = db.Column(db.String(30), nullable=False)
     
     pessoa_parent = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
+    prefeitura_id = db.Column(db.Integer, db.ForeignKey('Funcionario.id'), nullable=False)
+    motorista_child = db.relationship("Motorista", uselist=False)
 
     def __init__(self, prefeitura, cargo):
         self.prefeitura = prefeitura

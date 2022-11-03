@@ -6,7 +6,8 @@ class Prefeito(Pessoa):
     __tablename__ = "tb_prefeito"
 
     pessoa_parent = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
-    
+    prefeitura_parent = db.Column(db.Integer, db.ForeignKey("tb_prefeitura.id"))
+
     def __init__(self, pessoa):
         self.pessoa = pessoa
 
