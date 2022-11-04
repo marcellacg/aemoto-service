@@ -1,6 +1,10 @@
-from model.aluno import Aluno
-from model.cidade import Cidade
+from flask import Flask
+from flask_restful import Api
+from flask_cors import CORS
+
 from model.endereco import Endereco
+from model.pessoa import Pessoa
+from model.aluno import Aluno
 from model.funcionario import Funcionario
 from model.gestorApp import GestorApp
 from model.instituicaoDeEnsino import InstituicaoDeEnsino
@@ -12,6 +16,18 @@ from model.prefeitura import Prefeitura
 from model.rota import Rota
 from model.uf import Uf
 from model.veiculo import Veiculo
+
+from helpers.database import db, migrate
+
+# CORS
+app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://marcella:409014@localhost:5432/aemotor'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
+migrate.init_app(app, db)
 
 
 
@@ -30,11 +46,11 @@ funcionario = Funcionario(prefeitura, "Técnico")
 veiculo = Veiculo("Guarabira", "20", "Ônibus", "FPG-8971")
 #gestor = GestorApp("Severino", "12/02/1999", "seve@sevs", "8752-5541")
 gestor = GestorApp(pessoa2)
-print(gestor)
+#print(gestor)
 instituicao = InstituicaoDeEnsino("IFPB", "Rua Professor Carlos Leonardo Arcoverde", "98195-6465")
 rota = Rota("Guarabira", "30", "Riachão", "Van", "Inácia", "08:00h", "09:00h")
 motorista = Motorista(rota, funcionario)
-print(motorista)
+#print(motorista)
 passageiro = Passageiro(aluno, "Tacima", "Guarabira")
 #print(passageiro)
 

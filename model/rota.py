@@ -10,16 +10,13 @@ class Rota(db.Model):
     prefeitura = db.Column(db.String(200), nullable=False)
     veiculo = db.Column(db.String(30), nullable=False)
     passageiro = db.Column(db.String(50), nullable=False)
-    horaSaida = db.Column(db.datetime(), nullable=False)
-    horaChegada = db.Column(db.datetime(), nullable=False)
-
-
+    horaSaida = db.Column(db.DateTime(), nullable=False)
+    horaChegada = db.Column(db.DateTime(), nullable=False)
 
     prefeitura_child = db.relationship("Prefeitura", uselist=False)
     instituicoes = db.relationship('InstituicaoDeEnsino', backref='InstituicaoDeEnsino', lazy=True)
-    aluno_parent = db.Column(db.Integer, db.ForeignKey('Alunos.id'), nullable=False)
+    aluno_parent = db.Column(db.Integer, db.ForeignKey('tb_aluno.id'), nullable=False)
 
-    
     
     def __init__(self, nomeDestino, qtdalunos, prefeitura, veiculo, passageiro, horaSaida, horaChegada):
         self.nomeDestino = nomeDestino

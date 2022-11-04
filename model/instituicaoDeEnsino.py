@@ -11,7 +11,7 @@ class InstituicaoDeEnsino(db.Model):
 
     endereco_child = db.relationship("Endereco", uselist=False)
     aluno_parent = db.Column(db.Integer, db.ForeignKey("tb_aluno.id"))
-    rota_id = db.Column(db.Integer, db.ForeignKey('InstituicaoDeEnsino.id'), nullable=False)
+    rota_id = db.Column(db.Integer, db.ForeignKey('tb_rota.id'), nullable=False)
     
     def __init__(self, nome, logradouro, telefone):
         self.nome = nome

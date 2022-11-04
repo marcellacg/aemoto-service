@@ -1,4 +1,5 @@
 from helpers.database import db
+from sqlalchemy.types import String
 
 class Pessoa(db.Model):
 
@@ -18,6 +19,9 @@ class Pessoa(db.Model):
     funcionario_child = db.relationship("Funcionario", uselist=False)
     gestor_child = db.relationship("GestorApp", uselist=False)
 
+    #HERANÇA
+    tipo_pessoa = db.Column('tipo_pessoa', String(50))
+    __mapper_args__ = {'polymorphic_on': tipo_pessoa}
 
 
     def __init__(self, nome, nascimento, email, telefone):
