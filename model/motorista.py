@@ -6,7 +6,9 @@ class Motorista(Funcionario):
 
     __tablename__ = "tb_motorista"
 
+
     funcionario_parent = db.Column(db.Integer, db.ForeignKey("tb_funcionario.id"))
+    
 
     def __init__(self, rotas, funcionario):
         self.funcionario = funcionario
