@@ -11,8 +11,8 @@ class Prefeitura(db.Model):
     nomePrefeito = db.Column(db.String(100), unique=True, nullable=False)
 
     prefeito_child = db.relationship("Prefeito", uselist=False)
-    cidade_parent = db.Column(db.Integer, db.ForeignKey("tb_cidade.id"))
     rota_parent = db.Column(db.Integer, db.ForeignKey("tb_rota.id"))
+    cidade_parent = db.Column(db.Integer, db.ForeignKey("tb_cidade.id"))
     gestores = db.relationship('GestorApp', backref='GestorApp', lazy=True)
     funcionarios = db.relationship('Funcionario', backref='Funcionario', lazy=True)
 
